@@ -1,0 +1,72 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Newsletter" section on the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the newsletter section
+  - Subheading: description of the newsletter section
+{%- endcomment -%}
+
+<h1>{{ section.settings.title }}</h1>
+<div>{{ section.settings.content }}</div>
+
+<section class="bg-neutralPink w-96 md:w-max p-10 rounded-xl">
+  {% if section.settings.section_title != blank %}
+    <label for="Email" class="text-3xl">{{ section.settings.section_title | escape }}</label>
+  {% endif %}
+  {% if section.settings.subheading != blank %}
+    <p class="mt-3">{{ section.settings.subheading | escape }}</p>
+  {% endif %}
+
+  {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+      <p>{{ 'Thak you for signing up!'}}</p>
+    {% else %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="email"
+        name="contact[email]"
+        id="Email"
+        value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+        placeholder="{{ 'Joanna@example.com'}}"
+        autocorrect="off"
+        autocapitalize="off"
+        class="text-center p-2 w-full mt-5">
+        <br>
+        <div class="mx-auto bg-neutralYellow rounded-lg p-2 w-52 mt-5">
+             <button type="submit" name="commit" id="Subscribe" value="submit message">
+        Submit
+      </button>
+        </div>
+     
+    {% endif %}
+  {% endform %}
+</section>
+
+{% schema %}
+  {
+    "name": "Newsletter", "class":"flex items-center justify-center text-center py-7  overflow-hidden",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter!"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing."
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}

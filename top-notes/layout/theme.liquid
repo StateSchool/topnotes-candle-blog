@@ -10,8 +10,11 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'output.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
   <style>
+      [x-cloak] {display: none !important;}
+
        .content-wrap{
       padding-bottom: 2.5rem;
     }
@@ -21,13 +24,16 @@
 
 
 </head>
-<body>
+<body class="bg-offWhite">
 {% section 'header' %}
   
 
   <main role="main" class="relative min-h-screen">
     <div class="content-wrap">
       {{ content_for_layout }}
+      {% section 'newsletter' %}
+
+
     </div>
     
    {% section 'footer' %}

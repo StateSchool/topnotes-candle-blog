@@ -6,10 +6,22 @@ module.exports = {
     "./sections/*.liquid",
     "./snippets/*.liquid",
     "./templates/*.liquid",
-    "./templates/customers/*liquid"
+    "./templates/customers/*liquid",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        inspiration: ["Inspiration", "cursive"],
+      },
+      colors: {
+        neutralBlue: "#9CC0E7",
+        neutralGrey: "#A6A6A6",
+        offWhite: "#FCFCFC",
+        neutralYellow: "#FFEFCF",
+        neutralPink: "#F7DBD7",
+      },
+    },
   },
   plugins: [],
 };
