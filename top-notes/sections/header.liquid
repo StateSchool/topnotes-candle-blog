@@ -77,9 +77,9 @@
                                 {{'Register' | customer_register_link | replace: '<a', '<a class="text-base text-neutralGrey hover:text-grey-700"'}}
                         {% endif %}
                     {% endif %} {%- endcomment -%}
-                        <button class="bg-neutralYellow rounded-md p-3 text-neutralGrey font-bold tracking-wide">
-                            <a href="">Subscribe</a>
-                            </button>
+                        <a href="/pages/subscription-page">
+                        <button class="bg-neutralYellow rounded-md p-3 text-neutralGrey font-bold tracking-wide">Subscribe</button>
+                        </a>
                     
                 </div> 
                 
@@ -93,12 +93,14 @@
                 <!-------MOBILE NAVIGATION MENU CONTAINER--------->
                     <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
                         <div class="shadow-lg rounded ring-1 ring-black ring-opacity-5 bg-white w-full">
-                            <div class="p-5 divide-y-2 divide-neutralGrey">
+                            <div class="p-5 ">
                                 <!-------MOBILE MENU TITLE & CLOSE BUTTON---->
-                                <div class="flex  justify-between pb-3">
+                                <div class="flex justify-between pb-3">
                                    
-                                  
+                                 
                                 <!-------NAVIGATION LINKS FOR MOBILE MENU---->
+                                                
+
                                 <div class="pt-6 font-montserrat text-neutralGrey">
                                     <nav class="grid gap-y-7">
                                         {% for link in section.settings.menu.links %}
@@ -121,14 +123,24 @@
                                                     <a href="{{link.url}}">{{link.title}}</a>
                                             {% endif %}
                                         {% endfor %}
-                                    </nav>
-                                </div>
-                                            <div class="-mr-2">
+                                        <a href="/pages/subscription-page" class="-ml-2">
+                                            <button class="bg-neutralYellow rounded-md p-3 text-neutralGrey font-bold tracking-wide -ml-1">Subscribe</button>
+                                        </a>
+
+                                            </div>
+
+                                               <div class="-mr-2">
                                                     <button x-on:click="mobileMenuOpen = false" type="button" class="bg-white rounded-md p-2 text-gray-500  ">
                                                         {%render 'icon-close'%}
 
                                                     </button>
                                                 </div>
+                                        </div> 
+                                        
+                                    </nav>
+                                  
+                               
+                                            
 
                                 </div>
                             

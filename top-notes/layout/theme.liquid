@@ -30,10 +30,12 @@
 
   <main role="main" class="relative min-h-screen">
     <div class="content-wrap">
-      {{ content_for_layout }}
-      {% section 'newsletter' %}
-
-
+     
+        {% if request.path contains '/pages/subscription-page' %}
+          {%section 'subscribe'%}
+              {%- else -%}
+                 {{ content_for_layout }}
+                 {%endif%}
     </div>
     
    {% section 'footer' %}
