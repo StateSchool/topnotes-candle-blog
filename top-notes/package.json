@@ -1,0 +1,18 @@
+{
+  "name": "top-notes",
+  "version": "1.0.0",
+  "description": "[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ShopifyServe": "shopify login --store https://top-notes-candles.myshopify.com/admin && shopify theme serve",
+    "runWatch": "npx tailwind -i ./src/input.css -o ./assets/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
