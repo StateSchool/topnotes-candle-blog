@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ShopifyServe": "shopify login --store https://top-notes-candles.myshopify.com/admin && shopify theme serve",
+    "shopifyServe": "shopify login --store https://top-notes-candles.myshopify.com/admin && shopify theme serve",
     "runWatch": "npx tailwind -i ./src/input.css -o ./assets/output.css --watch"
   },
   "keywords": [],

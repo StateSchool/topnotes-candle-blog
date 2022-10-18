@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         inspiration: ["Inspiration", "cursive"],
+        biz: ["BIZ UDPMincho", "serif"],
       },
       colors: {
         neutralBlue: "#9CC0E7",
@@ -20,6 +21,8 @@ module.exports = {
         offWhite: "#FCFCFC",
         neutralYellow: "#FFEFCF",
         neutralPink: "#F7DBD7",
+        newBeige: "#FAF4F2",
+        neutralOrange: "#EF9273",
       },
     },
   },
